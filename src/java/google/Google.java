@@ -87,7 +87,7 @@ String check = "GOOGLE";
         }
             out.println("<br><br>");
             if (j != 0) {
-                out.println("<center><h6>Search  results  added  to  database</h6></center>");
+                out.println("<center><h6>Search  results  added  to  database successfully</h6></center>");
             } else {
                 out.println("<h6>unsuccessful</h6>");
             }
