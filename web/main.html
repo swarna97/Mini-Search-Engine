@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+#imgid{
+    width:450px;
+    height:150px;
+}
+.button {
+    position: relative;
+    background-color:lightblue;
+    border: none;
+    font-size: 28px;
+    color: BLACK;
+    padding: 15px;
+    width: 150px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background:lightblue;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+</style>
+<script>
+    function callServlet(form, servletSrc)
+{
+form.method="post";
+form.action = "History";
+}
+function callServlet1(form, servletSrc)
+{
+form.method="post";
+form.action = "clearHistory";
+}
+</script>
+</head>
+<body>
+<center>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <img src="miniature.jpg"  id="imgid"><br>
+<form ACTION="Google" method="post">
+    <input type="text" name="search" placeholder="Search.."><br><br><br>
+    Number of results:
+    <select name="results">  
+<option>10</option>  
+<option>20</option>  
+<option>30</option>  
+    </select>  <br><br><br>
+<br><br>
+   <button class="button">SEARCH</button><br><br>
+   
+ <button class="button" onClick="callServlet(this.form,'History')">History
+</button> 
+   <br>
+ <br>
+ <button class="button" onClick="callServlet1(this.form,'clearHistory')">Clear history
+</button> 
+ 
+ <br>
+</form>
+</center>
+</body>
+</html>
+
